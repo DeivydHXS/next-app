@@ -1,47 +1,37 @@
-import { Bell, ChevronDown, CircleQuestionMark, Grid3x3, Menu } from "lucide-react";
+"use client"
+
+import { Bell, ChevronDown, CircleQuestionMark, Grid3x3, Menu, MenuIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { Button } from "../ui/button";
+import { useSidebar } from "../ui/sidebar";
 
 function Header() {
+    const { toggleSidebar } = useSidebar();
+
     return (
-        <div className="p-2 bg-accent">
-            <div className="w-full flex items-center">
-                <Drawer
-                    direction="left">
-                    <DrawerTrigger>
-                        <div className="p-2 hover:bg-muted-foreground cursor-pointer rounded-2xl">
-                            <Menu />
+        <div className="w-full p-2 bg-background">
+            <div className="w-full">
+                <div className=" w-full flex justify-between items-center">
+                    <div className="flex justify-between items-center gap-2">
+                        <div>
+                            <Button variant={'ghost'} onClick={toggleSidebar}>
+                                <MenuIcon />
+                            </Button>
                         </div>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                        <DrawerHeader>
-                            <DrawerClose>
-                                <Button variant="outline">X</Button>
-                            </DrawerClose>
-                            <DrawerTitle></DrawerTitle>
-                            <DrawerDescription></DrawerDescription>
-                        </DrawerHeader>
-                        <DrawerFooter>
-                        </DrawerFooter>
-                    </DrawerContent>
-                </Drawer>
+                        <h1>IT Universe</h1>
+                    </div>
 
-
-                <div className="px-4 w-full flex justify-between items-center">
-                    <h1>IT Universe</h1>
-
-                    <div className="flex items-center gap-4">
-                        <div className="p-1 rounded-2xl cursor-pointer hover:bg-muted-foreground">
+                    <div className="flex items-center gap-2">
+                        <Button variant={'ghost'}>
                             <Grid3x3 />
-                        </div>
-                        <div className="p-1 rounded-2xl cursor-pointer hover:bg-muted-foreground">
+                        </Button>
+                        <Button variant={'ghost'}>
                             <CircleQuestionMark />
-                        </div>
-                        <div className="p-1 rounded-2xl cursor-pointer hover:bg-muted-foreground">
+                        </Button>
+                        <Button variant={'ghost'}>
                             <Bell />
-                        </div>
-                        <div className="p-1 rounded-2xl cursor-pointer hover:bg-muted-foreground">
+                        </Button>
+                        <Button variant={'ghost'}>
                             <div className="flex gap-2 items-center">
                                 <Avatar>
                                     <AvatarImage src="https://github.com/shadcn.png" />
@@ -50,7 +40,7 @@ function Header() {
 
                                 <ChevronDown />
                             </div>
-                        </div>
+                        </Button>
                     </div>
                 </div>
             </div>

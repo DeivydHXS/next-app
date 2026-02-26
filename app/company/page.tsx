@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
-
 export default function Company() {
     return (
         <>
-            
+            <div>
+                <h1>Pagina Inicial</h1>
+            </div>
         </>
     );
 }
