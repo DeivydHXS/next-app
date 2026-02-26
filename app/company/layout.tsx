@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import { Header } from "@/components/header";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   description: "Projeto de testes com Next",
 };
 
-export default function RootLayout({
+export default function CompanyLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
