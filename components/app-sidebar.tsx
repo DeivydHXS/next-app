@@ -18,37 +18,37 @@ const menuItems = [
     },
     {
         name: "1:1",
-        url: "#",
+        url: "/company/oneone",
         icon: MessagesSquare
     },
     {
         name: "PDI",
-        url: "#",
+        url: "/company/pdi",
         icon: Flag
     },
     {
         name: "Reviews",
-        url: "#",
+        url: "/company/reviews",
         icon: MessagesSquareIcon
     },
     {
         name: "Feedbacks",
-        url: "#",
+        url: "/company/feedbacks",
         icon: LucideMessagesSquare
     },
     {
         name: "Elogios",
-        url: "#",
+        url: "/company/elogios",
         icon: Award
     },
     {
         name: "OKRs",
-        url: "#",
+        url: "/company/okrs",
         icon: LocateFixed
     },
     {
         name: "Diretório",
-        url: "#",
+        url: "/company/diretorio",
         icon: Network
     },
 ]

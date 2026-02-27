@@ -47,7 +47,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <Button className="w-full cursor-pointer">Entrar</Button>
+                <Button className="w-full cursor-pointer">
+                  <a href="/company">Entrar</a>
+                </Button>
 
                 <div className="w-full flex items-center gap-4">
                   <div className="h-[0.4px] w-full bg-muted-foreground" />
