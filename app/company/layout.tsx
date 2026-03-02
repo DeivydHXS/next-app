@@ -36,7 +36,11 @@ export default function CompanyLayout({
           <SidebarInset>
             <Header />
             <main>
-              {children}
+              <div className="w-full flex justify-center">
+                <div className="w-[90%] my-8">
+                  {children}
+                </div>
+              </div>
             </main>
           </SidebarInset>
         </SidebarProvider>

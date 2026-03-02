@@ -4,10 +4,9 @@ import {
     Sidebar,
     SidebarContent,
     SidebarFooter,
-    SidebarHeader,
     SidebarMenu,
 } from "@/components/ui/sidebar"
-import { Award, Flag, HomeIcon, LocateFixed, LucideMessagesSquare, MessagesSquare, MessagesSquareIcon, Network } from "lucide-react"
+import { Award, Clipboard, Flag, HomeIcon, LocateFixed, LucideMessagesSquare, MessagesSquare, MessagesSquareIcon, Network } from "lucide-react"
 import { NavProjects } from "./nav-projects"
 
 const menuItems = [
@@ -29,7 +28,7 @@ const menuItems = [
     {
         name: "Reviews",
         url: "/company/reviews",
-        icon: MessagesSquareIcon
+        icon: Clipboard
     },
     {
         name: "Feedbacks",

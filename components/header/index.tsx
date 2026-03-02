@@ -1,6 +1,6 @@
 "use client"
 
-import { Bell, ChevronDown, CircleQuestionMark, Grid3x3, Menu, MenuIcon } from "lucide-react";
+import { Bell, ChevronDown, CircleQuestionMark, Grid3x3, MenuIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { useSidebar } from "../ui/sidebar";
@@ -34,8 +34,8 @@ function Header() {
                         <Button variant={'ghost'}>
                             <div className="flex gap-2 items-center">
                                 <Avatar>
-                                    <AvatarImage src="https://github.com/shadcn.png" />
-                                    <AvatarFallback>CN</AvatarFallback>
+                                    <AvatarImage src="https://github.com/deivydhxs.png" />
+                                    <AvatarFallback>DH</AvatarFallback>
                                 </Avatar>
 
                                 <ChevronDown />
