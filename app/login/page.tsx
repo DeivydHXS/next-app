@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
-export default function Home() {
+export default function Login() {
   return (
     <div className="w-full h-full md:grid md:grid-cols-2 lg:grid-cols-12">
 

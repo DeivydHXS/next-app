@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +11,13 @@ import { Badge } from "@/components/ui/badge";
 import { EllipsisVertical } from "lucide-react";
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox";
+
+const options = [
+    "Finalizada",
+    "Em progresso",
+    "Não iniciada",
+] as const
 
 export default function Pdi() {
     return (
@@ -65,19 +74,19 @@ export default function Pdi() {
 
                     <div className="w-full mt-8 flex justify-between">
                         <div className="flex gap-4">
-                            <Select>
-                                <SelectTrigger className="w-full max-w-48">
-                                    <SelectValue placeholder="Filtrar por" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectGroup>
-                                        <SelectLabel>Filtrar por</SelectLabel>
-                                        <SelectItem value="finished">Finalizada</SelectItem>
-                                        <SelectItem value="in-progress">Em progresso</SelectItem>
-                                        <SelectItem value="not-started">Não iniciada</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
+                            <Combobox items={options}>
+                                <ComboboxInput placeholder="Filtrar por" showClear />
+                                <ComboboxContent>
+                                    <ComboboxEmpty>Sem itens.</ComboboxEmpty>
+                                    <ComboboxList>
+                                        {(item) => (
+                                            <ComboboxItem key={item} value={item}>
+                                                {item}
+                                            </ComboboxItem>
+                                        )}
+                                    </ComboboxList>
+                                </ComboboxContent>
+                            </Combobox>
 
                         </div>
                         <Button variant={'default'}>Nova área de desenvolvimento</Button>

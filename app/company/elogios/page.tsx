@@ -53,7 +53,7 @@ export default function Elogios() {
                         </div>
                     </div>
 
-                    <ul>
+                    <ul className="flex flex-col gap-8">
                         <li>
                             <Card>
                                 <CardContent className="flex flex-col gap-4">
