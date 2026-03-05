@@ -6,7 +6,7 @@ import {
     SidebarFooter,
     SidebarMenu,
 } from "@/components/ui/sidebar"
-import { Award, Clipboard, Flag, HomeIcon, LocateFixed, LucideMessagesSquare, MessagesSquare, MessagesSquareIcon, Network } from "lucide-react"
+import { Award, Clipboard, Flag, HomeIcon, LocateFixed, LucideMessagesSquare, MessagesSquare, Network } from "lucide-react"
 import { NavProjects } from "./nav-projects"
 
 const menuItems = [

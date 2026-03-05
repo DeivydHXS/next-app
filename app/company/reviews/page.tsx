@@ -1,10 +1,8 @@
+import { SearchInput } from "@/components/shared/search-input";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ChevronDown, ChevronUp, SearchIcon } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const data = [
     {
@@ -38,14 +36,7 @@ export default function Reviews() {
         <div className="flex flex-col gap-8">
             <h1 className="text-2xl font-semibold">Reviews</h1>
             <Separator />
-            <Field className="max-w-sm">
-                <InputGroup>
-                    <InputGroupInput id="inline-start-input" placeholder="Buscar por nome" />
-                    <InputGroupAddon align="inline-end">
-                        <SearchIcon className="text-muted-foreground" />
-                    </InputGroupAddon>
-                </InputGroup>
-            </Field>
+            <SearchInput placeholder="Buscar por nome" />
 
             <Table>
                 <TableCaption>Lista de reviews.</TableCaption>

@@ -1,9 +1,7 @@
 'use client'
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Field, FieldLabel } from "@/components/ui/field"
 import { Progress } from "@/components/ui/progress"
@@ -11,13 +9,15 @@ import { Badge } from "@/components/ui/badge";
 import { EllipsisVertical } from "lucide-react";
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox";
+import { SelectAlt } from "@/components/shared/select-alt";
+import { Select } from "@/components/shared/select";
+import { UserAvatar } from "@/components/shared/user-avatar";
 
 const options = [
     "Finalizada",
     "Em progresso",
     "Não iniciada",
-] as const
+]
 
 export default function Pdi() {
     return (
@@ -27,20 +27,17 @@ export default function Pdi() {
                     <TabsTrigger value="overview">Meu desenvolvimento</TabsTrigger>
                     <TabsTrigger value="analytics">Instruções de PDI</TabsTrigger>
                 </div>
-                <div>
-                    <Select>
-                        <SelectTrigger className="w-full max-w-48 text-sm font-bold border-0 border-b-2">
-                            <SelectValue placeholder="Trilha de Onboarding" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectLabel>Escolha o PDI</SelectLabel>
-                                <SelectItem value="onboarding">Trilha de Onboarding</SelectItem>
-                                <SelectItem value="pdi-cycle">Ciclo PDI</SelectItem>
-                            </SelectGroup>
-                        </SelectContent>
-                    </Select>
-                </div>
+
+                <SelectAlt label="Escolha o PDI" placeholder="Trilha de Onboarding" options={[
+                    {
+                        value: "onboarding",
+                        label: "Trilha de Onboarding",
+                    },
+                    {
+                        value: "pdi-cycle",
+                        label: "Ciclo PDI",
+                    },
+                ]} />
             </TabsList>
 
             <TabsContent value="overview" className="flex flex-col gap-8">
@@ -50,10 +47,7 @@ export default function Pdi() {
                         <CardContent>
                             <div className="flex justify-between items-center gap-8">
                                 <div className="min-w-fit flex justify-center items-center gap-4">
-                                    <Avatar size="lg">
-                                        <AvatarImage src="https://github.com/deivydhxs.png" />
-                                        <AvatarFallback>DH</AvatarFallback>
-                                    </Avatar>
+                                    <UserAvatar src="https://github.com/deivydhxs.png" fallback="DH" />
                                     <div className="flex flex-col">
                                         <h1 className="text-2xl font-bold text-muted-foreground">Deivyd Homam</h1>
                                         <p className="text-xs font-bold">Perfil</p>
@@ -73,22 +67,8 @@ export default function Pdi() {
                     </Card>
 
                     <div className="w-full mt-8 flex justify-between">
-                        <div className="flex gap-4">
-                            <Combobox items={options}>
-                                <ComboboxInput placeholder="Filtrar por" showClear />
-                                <ComboboxContent>
-                                    <ComboboxEmpty>Sem itens.</ComboboxEmpty>
-                                    <ComboboxList>
-                                        {(item) => (
-                                            <ComboboxItem key={item} value={item}>
-                                                {item}
-                                            </ComboboxItem>
-                                        )}
-                                    </ComboboxList>
-                                </ComboboxContent>
-                            </Combobox>
+                        <Select options={options} placeholder="Filtrar por" emptyMessage="Sem itens." />
 
-                        </div>
                         <Button variant={'default'}>Nova área de desenvolvimento</Button>
                     </div>
 

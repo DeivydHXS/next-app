@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { UserAvatar } from "@/components/shared/user-avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -22,10 +22,9 @@ export default function OneOne() {
                     <CardContent>
                         <div className="flex justify-between items-center">
                             <div className="flex justify-center items-center gap-2">
-                                <Avatar size="lg">
-                                    <AvatarImage src="https://github.com/shadcn.png" />
-                                    <AvatarFallback>CN</AvatarFallback>
-                                </Avatar>
+
+                                <UserAvatar src="https://github.com/shadcn.png" fallback="CN" />
+
                                 <h1 className="text-2xl font-bold text-muted-foreground">Rogério Santos</h1>
                             </div>
                             <div>
